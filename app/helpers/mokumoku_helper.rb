@@ -1,0 +1,2 @@
+module MokumokuHelper
+end

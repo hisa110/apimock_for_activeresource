@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API Mock</title>
+  </head>
+  <body>
+	<p>
+	Please set environment valuable "MOCK_DIR"
+	<br />ex: export MOCK_DIR=/tmp/path/to/rails_root/spec/api
+	</p>
+	<p>
+	Please startup with port.
+	<br />rails s -p 3001
+	</p>
+	<p>
+		if you change response code.please access the following url.<br />
+		http://localhost:3001/stat/code/200<br />
+		http://localhost:3001/stat/code/400<br />
+		http://localhost:3001/stat/code/404<br />
+		
+	</p>
+	<p>
+	 Before test, You set up yaml files for mock.<br />
+	http://localhost:3001/users/info<br />
+	 ${MOCK_DIR}/users/info/xxxx_200.yml<br />
+	 ${MOCK_DIR}/users/info/xxxx_404.yml<br />
+	 ${MOCK_DIR}/users/info/xxxx_{response_code}.yml<br />
+	
+	</p>
+	
+  </body>
+</html>
