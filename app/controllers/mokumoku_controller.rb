@@ -11,7 +11,7 @@ class MokumokuController < ApplicationController
     flist=[]
     Find.find($yaml_dir+'/'+path) {|f|
       if File::ftype(f) == "file"
-        if /_#{$response_code}.yml$/ =~ f then
+        if /_#{$response_code}.json$/ =~ f then
           flist.push f
         end
 
@@ -20,9 +20,8 @@ class MokumokuController < ApplicationController
     
     # random
     jsonpath=flist.sort_by{|i| rand }.first
-    
     # return
-    render :text => s = File.read(jsonpath, :encoding => Encoding::UTF_8), :status=>$response_code
+    render :json => JSON.parse(File.read(jsonpath, :encoding => Encoding::UTF_8)), :status=>$response_code
   end
   
 end
